@@ -12,7 +12,7 @@ class User(Base):
     email: Mapped[str] = mapped_column(String(100), unique=True, nullable=False)
     hashed_password: Mapped[str] = mapped_column(String(255), nullable=False)
     is_active: Mapped[bool] = mapped_column(default=True, nullable=True)
-    role: Mapped[str] = mapped_column(String(255), default="user", nullable=True)
+    role: Mapped[str] = mapped_column(String(255), default="user", nullable=False)
     registered_at: Mapped[datetime] = mapped_column(DateTime, server_default=func.now())
 
 
